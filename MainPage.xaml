@@ -1,0 +1,28 @@
+﻿<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Lab2.MainPage">
+
+    <VerticalStackLayout>
+        <GraphicsView
+            x:Name="GameView"
+            Drawable="{Binding GameCanvas}"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            InputTransparent="False"
+            MinimumHeightRequest="200"
+            MinimumWidthRequest="200"
+            SizeChanged="OnGameViewSizeChanged">
+
+            <GraphicsView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTap" />
+            </GraphicsView.GestureRecognizers>
+        </GraphicsView>
+
+        <Button 
+            Text="Почати гру" 
+            Clicked="OnStartGameClicked" 
+            HorizontalOptions="Center" 
+            VerticalOptions="End" />
+    </VerticalStackLayout>
+</ContentPage>
